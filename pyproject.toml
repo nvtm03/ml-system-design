@@ -1,0 +1,43 @@
+[project]
+name = "contract-ai-system-design"
+version = "0.1.0"
+description = "Проектирование ML/LLM-системы: Модульный конструктор договоров с RAG и стресс-тестированием рисков"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8.0",
+    "pre-commit>=4.0.0",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+src = ["src"]
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort (сортировка импортов)
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["contract_ai"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
